@@ -68,7 +68,6 @@ nav a {
     background-color: rgb(235, 243, 243);
     text-align: center;
     padding: 50px 100px;
-    /* min-height: 5; */
 }
 
 .feature {
@@ -79,7 +78,7 @@ nav a {
     font-size: 1.5em;
 }
 
-/* Style the footer */
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
