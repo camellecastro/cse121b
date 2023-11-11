@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camelle Castro | CSE 121B | BYU-Idaho</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | CSE 121b | W02: Programming Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>CSE 121B JavaScript Language</h1>
-        <p>Camelle Castro</p>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </nav>
+  <main id="home">
+    <picture>
+      <img src="images/placeholder.png" alt="Placeholder Image">
+    </picture>
+    <section>
+      <h1>About Me</h1>
+      <div class="info">Name: <span id="name"></span></div>
+      <h2>Favorite Food</h2>
+      <div class="block" id="food"></div>
     </section>
-
-    <section class="features">
-        <div class="feature">
-            <h2>Week 1</h2>
-            <p>Set up coding environment.<br>Git, Github, Github Pages, CSE121B Repo</p>
-            <a href="test.html" target="_blank" class="cta-button">Click here for my test.html</a>
-        </div>
-        <div class="feature">
-            <h2>Week 1 Programming Task</h2>
-            <p>Become familiar with VS Code. Practice using the console and built-in stepwise debugger in a browser's Dev Tools. Work with JavaScript variables. Publish local work to cse121b Github Pages remote space.</p>
-            <a href="w01-task.html" target="_blank" class="cta-button">Click here for my w01-task.html</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Camelle Castro</p>
-    </footer>
+  </main>
+  <footer>
+    &copy;<span id="year"></span> | About Me | CSE 121b
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/w02-task.js"></script>
 </body>
+
 </html>
