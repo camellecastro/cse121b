@@ -86,7 +86,7 @@ document.querySelector('#getTotal').addEventListener('click', () => {
 /* Output Source Array */
 let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 /* Assign the value of the array variable to the HTML element with an ID of array */
-document.querySelector('#array').innerText = `Array: ${numbersArray}`;
+document.querySelector('#array').innerText = numbersArray;
 
 /* Output Odds Only Array */
 /* Use the filter() array method to find all of the odd numbers of the array variable and assign the result to the HTML element with an ID of odds */
