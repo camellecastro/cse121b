@@ -64,7 +64,7 @@ document.querySelector('#getTotal').addEventListener('click', () => {
     let total;
 
     if (applyDiscount) {
-        total = subtotal * 0.85;
+        total = subtotal * 0.85; //if membership discount is 20% change 0.85 to 0.80
     } else {
         total = subtotal;
     }
