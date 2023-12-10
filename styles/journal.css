@@ -1,0 +1,44 @@
+#entry-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#entry-textarea {
+    width: 700px;
+    height: 400px; 
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    resize: none;
+}
+
+#save-entry {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #070707;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+#save-entry:hover {
+    background-color: brown;
+}
+
+#entry-management {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#entry-management button {
+    margin-right: 10px;
+}
