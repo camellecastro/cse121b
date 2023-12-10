@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const journalBookNameElement = document.getElementById('journal-book-name');
     const quoteElement = document.getElementById('quote');
     const entriesListElement = document.getElementById('entries-list');
-    const toggleEntriesButton = document.getElementById('view-entries');
 
     // Get the selected journal from the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -53,20 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for viewing entries
     document.getElementById('view-entries').addEventListener('click', () => {
         displayEntries(selectedJournal);
-    });
-
-    // Event listener for toggling entries visibility
-    toggleEntriesButton.addEventListener('click', () => {
-        const entriesElement = document.getElementById('journal-entries');
-        const isHidden = entriesListElement.style.display === 'none';
-
-        if (isHidden) {
-            entriesElement.style.display = 'block';
-            toggleEntriesButton.textContent = 'Hide Entries';
-        } else {
-            entriesElement.style.display = 'none';
-            toggleEntriesButton.textContent = 'View Entries';
-        }
     });
 });
 
