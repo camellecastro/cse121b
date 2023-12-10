@@ -3,54 +3,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const newJournalNameElement = document.getElementById('new-journal-name');
     const existingJournalSelect = document.getElementById('existing-journal-select');
 
-    // Load existing journals from local storage
-    const existingJournals = JSON.parse(localStorage.getItem('journals')) || [];
+    function loadExistingJournals() {
+        const existingJournals = JSON.parse(localStorage.getItem('journals')) || [];
+        existingJournals.forEach(journal => {
+            renderJournalList(journal);
+            renderJournalDropdown(journal);
+        });
+    }
 
-    // Display existing journals in the list
-    existingJournals.forEach(journal => {
+    function renderJournalList(journal) {
         const listItem = document.createElement('li');
         listItem.textContent = journal;
         journalListElement.appendChild(listItem);
+    }
 
-        // Add the journal to the dropdown
+    function renderJournalDropdown(journal) {
         const option = document.createElement('option');
         option.value = journal;
         option.textContent = journal;
         existingJournalSelect.appendChild(option);
-    });
+    }
 
-    // Event listener for adding a new journal
-    document.getElementById('add-new-journal').addEventListener('click', () => {
+    function addNewJournal() {
         const newJournalName = newJournalNameElement.value.trim();
         if (newJournalName !== '') {
-            // Add the new journal to the list
-            const listItem = document.createElement('li');
-            listItem.textContent = newJournalName;
-            journalListElement.appendChild(listItem);
+            renderJournalList(newJournalName);
+            renderJournalDropdown(newJournalName);
 
-            // Add the new journal to the dropdown
-            const option = document.createElement('option');
-            option.value = newJournalName;
-            option.textContent = newJournalName;
-            existingJournalSelect.appendChild(option);
-
-            // Save the updated journals to local storage
+            const existingJournals = JSON.parse(localStorage.getItem('journals')) || [];
             existingJournals.push(newJournalName);
             localStorage.setItem('journals', JSON.stringify(existingJournals));
 
-            // Clear the input field
             newJournalNameElement.value = '';
         } else {
             alert('Please enter a valid journal name.');
         }
-    });
+    }
 
-    // Event listener for choosing an existing journal
-    document.getElementById('choose-existing-journal').addEventListener('click', () => {
+    function chooseExistingJournal() {
         const selectedJournal = existingJournalSelect.value;
         if (selectedJournal) {
-            // Redirect to the main journal page with the selected journal
             window.location.href = `main-journal.html?journal=${encodeURIComponent(selectedJournal)}`;
         }
-    });
+    }
+
+    loadExistingJournals();
+
+    document.getElementById('add-new-journal').addEventListener('click', addNewJournal);
+    document.getElementById('choose-existing-journal').addEventListener('click', chooseExistingJournal);
 });
